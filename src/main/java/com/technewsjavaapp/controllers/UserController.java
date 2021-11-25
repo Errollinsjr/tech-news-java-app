@@ -44,6 +44,7 @@ public class UserController {
         return returnUser;
     }
 
+    //@RequestBody annotation—which will map the body of this request to a transfer object, then deserialize the body onto a Java object for easier use
     @PostMapping("/api/users")
     public User addUser(@RequestBody User user) {
         //Encrypt password
@@ -52,6 +53,7 @@ public class UserController {
         return user;
     }
 
+    //The @PathVariable will allow us to enter the int id into the request URI as a parameter, replacing the /{id} in @PutMapping("/api/users/{id}")
     @PutMapping("/api/users/{id}")
     public User updateUser(@PathVariable int id, @RequestBody User user) {
         User tempUser = userRepository.getById(id);
