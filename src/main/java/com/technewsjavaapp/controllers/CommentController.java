@@ -1,8 +1,5 @@
 package com.technewsjavaapp.controllers;
 
-package com.technews.controller;
-
-
 import com.technewsjavaapp.model.Comment;
 import com.technewsjavaapp.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +22,7 @@ public class CommentController {
 
     @GetMapping("/api/comments/{id}")
     public Comment getComment(@PathVariable int id) {
-        return commentRepository.getOne(id);
+        return commentRepository.getById(id);
     }
 
 
